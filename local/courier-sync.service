@@ -1,0 +1,16 @@
+[Unit]
+Description=Courier Data Sync Service
+After=network.target postgresql.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sync-courier-data.sh
+Environment=WOLT_REFRESH_TOKEN=vif-ln6QRLH4gOh7U2BJS77e0gjP1aP39uXcZnX0dLm0MZE
+Environment=CODA_API_TOKEN=a216fae4-c72a-4192-bbef-352a18a1a3ab
+Environment=POSTGRES_URL=91.214.112.114:1222
+Environment=GOOGLE_MAPS_API_KEY=AIzaSyA1t2tl_4WN4hs11gs-xbNZZSCoLHWE6eo
+User=courier-admin
+Group=courier-admin
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Courier Data Sync every 5 minutes between 6 AM and 11 PM
+
+[Timer]
+OnCalendar=*-*-* 6..23:0/5:00
+Unit=courier-sync.service
+
+[Install]
+WantedBy=timers.target
